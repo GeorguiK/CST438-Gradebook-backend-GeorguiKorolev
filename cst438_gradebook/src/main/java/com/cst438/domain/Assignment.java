@@ -11,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity
 public class Assignment {
 	
@@ -62,14 +60,6 @@ public class Assignment {
 	public void setCourse(Course course) {
 		this.course = course;
 	}
-	public List<AssignmentGrade> getGrades(){
-		return assignmentGrades;
-	}
-	
-	public AssignmentDTO toDTO() {
-		return new AssignmentDTO(id, course.getCourse_id(), needsGrading, name, dueDate.toString());
-	}
-	
 	@Override
 	public String toString() {
 		return "Assignment [id=" + id + ", course_id=" + course.getCourse_id() + ", name=" + name + ", dueDate=" + dueDate
