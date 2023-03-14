@@ -40,6 +40,7 @@ public class AssignmentController {
 		return null;
 	}
 	
+	//adds an assignment
 	@PutMapping("/addAssignment")
 	@Transactional
 	public AssignmentDTO addAssignment (@RequestBody AssignmentDTO assignmentDTO) {
